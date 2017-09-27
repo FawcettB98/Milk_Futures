@@ -60,6 +60,8 @@ Batch Size:  The number of samples that are propagated through the network
 
 Neurons:  
 
+Since neural networks use random inputs, the results for each run are slightly different.  Multiple runs were used for various levels of these parameters.  Boxplots of the results are shown below:
+
 ![Boxplot Epochs](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_epochs.png)
 
 ![Boxplot Batch Size](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_batchsize.png)
