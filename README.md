@@ -9,14 +9,19 @@ This information would give milk producers an idea of whether or not they should
 ## Data Sources
 
 Quandl.com - historic futures prices for Milk, Cheese, Dry Milk and corn
-NASS.usda.gov - monthly milk production http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1103
 
+Weekly data.  Start: 12/01/2013  End: 8/27/2017
+
+NASS.usda.gov - monthly milk production https://quickstats.nass.usda.gov/results/2F655051-7BEE-3F05-BA0F-0EA083C6F1F5
+
+Monthly data.  Start 01/2011  End 08/2017
 
 ![Milk Futures Prices](https://github.com/FawcettB98/Milk_Futures/blob/master/images/rolling_mean.png)
+Historical prices for Milk Futures along with moving average Mean and Standard Deviation.
 
 ## Baseline Prediction  
 
-The model will be considered successful if it can predict the movement of the futures prices with more accuracy than a very simple model where you predict that in this period the price will move in the same direction as it did in the last period.  A test was run with this strategy and found that it predicted the movements with an accuracy of 57.7%.  
+The model will be considered successful if it can predict the movement of the futures prices with more accuracy than a very simple model. This model will predict that the price will move in the same direction as it did in the previous period.  A test was run with this strategy and found that it predicted the movements with an accuracy of 57.7%.  
 
 ## Time series
 Most financial instrument prices can be modeled as time series since the time component is key.  In order to be modeled a time series must be "stationary", which means that the statistical properties (mean, variance, autocorrelation, etc) are constant over time.   There is a statistical test for stationarity known as the Dicky-Fuller Test.  For the Milk Futures time series this test came up with a p-value of 0.24.  This can be interpreted as showing that the series is not stationary.  There are ways to adjust for this, such as differencing the data, which are included in the methods described below.
@@ -29,7 +34,7 @@ The first model is based solely on the past prices of the Milk Futures.  This is
 
 ![PACF Plot](https://github.com/FawcettB98/Milk_Futures/blob/master/images/pacf.png)
 
-Without going into a lot of detail, these plots indicate that an AR parameter of 9 (look back 9 periods at the values) and an MA parameter of 0 (no Moving Average component) seem appropriate.  An I parameter of 1 was used to make the series more stationary.  The data was split into a "training" dataset of 156 weeks and a "test" dataset of 38 weeks.  The following graphs show how well the model fits the training data along with predictions into the test data:
+These plots indicate that an AR parameter of 9 (look back 9 periods at the values) and an MA parameter of 0 (no Moving Average component) seem appropriate.  An I parameter of 1 was used to make the series more stationary.  The data was split into a "training" dataset of 156 weeks and a "test" dataset of 38 weeks.  The following graphs show how well the model fits the training data along with predictions into the test data:
 
 ![Model Fit](https://github.com/FawcettB98/Milk_Futures/blob/master/images/arima_fit.png)
 
@@ -50,15 +55,19 @@ The accuracy of this model is 57.9%, so very slightly better than the baseline p
 
 
 ## Neural network
-A competing model was created using a Recurrent Neural Net.  
+A competing model was created using a Recurrent Neural Networks.  
 
 ![Boxplot Epochs](https://github.com/FawcettB98/Milk_Futures/blob/master/images/deep_neural_network.png)
+
+Training occurs in the hidden (blue) layers by minimizing error.  The particular type of network used - Long Short-Term Memory (LSTM) - allows the network to look into the past in the training.
+
+There are several parameters that need to be "tuned" in the network.  These include:
 
 Epoch:  "one pass over the entire dataset".  Used to separate the trianing into distinct phases.
 
 Batch Size:  The number of samples that are propagated through the network
 
-Neurons:  
+Neurons:  Number of interconnected units in the network
 
 Since neural networks use random inputs, the results for each run are slightly different.  Multiple runs were used for various levels of these parameters.  Boxplots of the results are shown below:
 
@@ -68,8 +77,10 @@ Since neural networks use random inputs, the results for each run are slightly d
 
 ![Boxplot Neurons](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_neurons.png)
 
-Looking at these box-plots, it looks like the best parameters to use are 1000 epochs, a batch size of 50, and 100 neurons.  
+Looking at these box-plots, it looks like the best parameters to use are 1000 epochs, a batch size of 50, and 50 neurons.  
 
 ![RNN Fit](https://github.com/FawcettB98/Milk_Futures/blob/master/images/rnn_act_v_pred.png)
 
 The final average accuracy turns out to be about 63%.  This is roughly 10% better than the baseline accuracy.
+
+## Conclusion
