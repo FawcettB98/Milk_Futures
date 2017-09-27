@@ -52,7 +52,13 @@ The accuracy of this model is 57.9%, so very slightly better than the baseline p
 ## Neural network
 A competing model was created using a Recurrent Neural Net.  
 
+![Boxplot Epochs](https://github.com/FawcettB98/Milk_Futures/blob/master/images/deep_neural_network.png)
 
+Epoch:  "one pass over the entire dataset".  Used to separate the trianing into distinct phases.
+
+Batch Size:  The number of samples that are propagated through the network
+
+Neurons:  
 
 ![Boxplot Epochs](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_epochs.png)
 
