@@ -10,13 +10,14 @@ This information would give milk producers an idea of whether or not they should
 
 Quandl.com - historic futures prices for Milk, Cheese, Dry Milk and corn
 
-Weekly data.  Start: 12/01/2013  End: 8/27/2017
+Weekly data  \nStart: 12/01/2013  \nEnd: 8/27/2017
 
 NASS.usda.gov - monthly milk production https://quickstats.nass.usda.gov/results/2F655051-7BEE-3F05-BA0F-0EA083C6F1F5
 
-Monthly data.  Start 01/2011  End 08/2017
+Monthly data  \nStart 01/2011  \nEnd 08/2017
 
 ![Milk Futures Prices](https://github.com/FawcettB98/Milk_Futures/blob/master/images/rolling_mean.png)
+
 Historical prices for Milk Futures along with moving average Mean and Standard Deviation.
 
 ## Baseline Prediction  
