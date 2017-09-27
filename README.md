@@ -8,7 +8,7 @@ This information would give milk producers an idea of whether or not they should
 
 I was able to get historical Milk Futures prices from Quandl.com.  Here I plot the prices, along with a rolling average.
 
-*Plot Rolling Mean*
+https://github.com/FawcettB98/Milk_Futures/blob/master/images/rolling_mean.png
 
 ### Baseline Prediction  
 
