@@ -22,7 +22,7 @@ Historical prices for Milk Futures along with moving average Mean and Standard D
 
 ## Baseline Prediction  
 
-The model will be considered successful if it can predict the movement of the futures prices with more accuracy than a very simple model. This model will predict that the price will move in the same direction as it did in the previous period.  A test was run with this strategy and found that it predicted the movements with an accuracy of 57.7%.  
+The model will be considered successful if it can predict the movement of the futures prices with more accuracy than a very simple strategy. This strategy will be to  predict that the price will move in the same direction as it did in the previous period.  A test was run with this strategy and found that it predicted the movements with an accuracy of 57.7%.  
 
 ## Time series
 Most financial instrument prices can be modeled as time series since the time component is key.  In order to be modeled a time series must be "stationary", which means that the statistical properties (mean, variance, autocorrelation, etc) are constant over time.   There is a statistical test for stationarity known as the Dicky-Fuller Test.  For the Milk Futures time series this test came up with a p-value of 0.24.  This can be interpreted as showing that the series is not stationary.  There are ways to adjust for this, such as differencing the data, which are included in the methods described below.
@@ -85,6 +85,7 @@ Looking at these box-plots, it looks like the best parameters to use are 1000 ep
 The final average accuracy turns out to be about 63%.  This is roughly 10% better than the baseline accuracy.
 
 ## Conclusion
-Market prices are notoriously difficult to predict.  
+Market prices are notoriously difficult to predict.  The use of machine learning models like LSTM Networks can help give a prediction of the future movement of the prices.
 
 ## Next Steps
+Additional steps could include finding more variables that may help predict the movement of Milk Futures prices.  These may include feed prices and weather data.  
