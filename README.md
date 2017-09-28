@@ -41,7 +41,7 @@ These plots indicate that an AR parameter of 9 (look back 9 periods at the value
 
 ![Model Prediction](https://github.com/FawcettB98/Milk_Futures/blob/master/images/arima_pred.png)
 
-The desired metric is the up or down movement of the market and how well the model predicts this.  In this case, the accuracy is only 50%, so this model does not outperform our baseline strategy.
+There is a lot of variance in the predictions, so making predictions about the exact value of the futures price is difficult.  The desired metric, however, is the up or down movement of the market and how well the model predicts this.  In this case, the accuracy is only 50%, so this model does not outperform our baseline strategy.
 
 ### ARIMAX
 It is possible that other items impact the price of milk.  For example, the amount of Milk produced in the nation.  Milk Production data was found at www.nass.usda.gov.  Additional futures prices of commodities that might be related to milk were also considered:  cheese, dry milk, and corn.
@@ -70,7 +70,7 @@ Batch Size:  The number of samples that are propagated through the network
 
 Neurons:  Number of interconnected units in the network
 
-Since neural networks use random inputs, the results for each run are slightly different.  Multiple runs were used for various levels of these parameters.  Boxplots of the results are shown below:
+Since neural networks use random inputs, the results for each run are slightly different.  Multiple runs were used for various levels of these parameters.  Boxplots of the accuracy for the various parameters are shown below:
 
 ![Boxplot Epochs](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_epochs.png)
 
@@ -78,9 +78,15 @@ Since neural networks use random inputs, the results for each run are slightly d
 
 ![Boxplot Neurons](https://github.com/FawcettB98/Milk_Futures/blob/master/images/boxplot_neurons.png)
 
-Looking at these box-plots, it looks like the best parameters to use are 1000 epochs, a batch size of 50, and 50 neurons.  
+The boxplot for the Epochs shows a clear improvement as the number of epochs increases.  The final number of epochs chosen was 1000.
+
+The boxplot for Batch Size does not show a clearly superior parameter setting.  The final Batch Size was set to 50.
+
+The boxplot for Neurons does not show a clearly superior parameter setting.  The final Batch Size was set to 100.
 
 ![RNN Fit](https://github.com/FawcettB98/Milk_Futures/blob/master/images/rnn_act_v_pred.png)
+
+This plot shows the actual prices against the predicted prices, along with a margin of error for the predictions.
 
 The final average accuracy turns out to be about 63%.  This is roughly 10% better than the baseline accuracy.
 
