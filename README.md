@@ -88,10 +88,12 @@ The boxplot for Neurons does not show a clearly superior parameter setting.  The
 
 This plot shows the actual prices against the predicted prices, along with a margin of error for the predictions.
 
+The y-axis is the normalized price (converted to a number between 1 and 0), and the x-axis is the number of weeks since 12-04-2016
+
 The final average accuracy turns out to be about 63%.  This is roughly 10% better than the baseline accuracy.
 
 ## Conclusion
 Market prices are notoriously difficult to predict.  The use of machine learning models like LSTM Networks can help give a prediction of the future movement of the prices.
 
 ## Next Steps
-Additional steps could include finding more variables that may help predict the movement of Milk Futures prices.  These may include feed prices and weather data.  
+Additional steps include finding more variables that may help predict the movement of Milk Futures prices.  Among these are feed prices and weather data.  
