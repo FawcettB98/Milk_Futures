@@ -1,6 +1,10 @@
 # Milk Futures
 Prediction of Milk futures movements
 
+## What are futures contracts?
+
+A futures contract is an agreement to buy or sell commodities at a fixed price to be delivered on a future date.  These contracts are then bought and sold on organized exchanges.
+
 ## Goal:  
 Predict up or down movement of Milk Futures Prices
 
@@ -8,11 +12,11 @@ This information would give milk producers an idea of whether or not they should
 
 ## Data Sources
 
-Quandl.com - historic futures prices for Milk, Cheese, Dry Milk and corn
+Quandl.com - API with historic futures prices for Milk, Cheese, Dry Milk and corn
 
 Weekly data  Start: 12/01/2013  End: 9/24/2017
 
-NASS.usda.gov - monthly milk production https://quickstats.nass.usda.gov/results/2F655051-7BEE-3F05-BA0F-0EA083C6F1F5
+NASS.usda.gov - National Agricultural Statistics Services QuickStats table with monthly milk production https://quickstats.nass.usda.gov/results/2F655051-7BEE-3F05-BA0F-0EA083C6F1F5
 
 Monthly data  Start 01/2011  End 08/2017
 
