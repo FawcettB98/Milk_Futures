@@ -86,7 +86,7 @@ The boxplot for Neurons does not show a clearly superior parameter setting.  The
 
 ![RNN Fit](https://github.com/FawcettB98/Milk_Futures/blob/master/images/rnn_act_v_pred.png)
 
-This plot shows the actual prices against the predicted prices, along with a margin of error for the predictions.
+This plot shows the actual prices against the predicted prices, along with a margin of error of one standard deviation for the predictions.
 
 The y-axis is the normalized price (converted to a number between 1 and 0), and the x-axis is the number of weeks since 12-04-2016
 
